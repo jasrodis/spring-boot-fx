@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>charts</groupId>
-	<artifactId>dataviewerDemo</artifactId>
+	<groupId>cryptosim.data</groupId>
+	<artifactId>historical-data</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>dataviewerDemo</name>
+	<name>historical-data</name>
 
 	<properties>
 		<slf4j.version>1.7.12</slf4j.version>
@@ -16,7 +16,7 @@
 
 	<build>
 
-		<finalName>charts.${project.artifactId}</finalName>
+		<finalName>historical-data</finalName>
 
 		<!-- Resources -->
 		<resources>
@@ -37,15 +37,6 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-
-			<!-- Maven shade plugin -->
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-shade-plugin</artifactId> 
-				<version>2.4.2</version> <executions> <execution> <phase>package</phase> 
-				<goals> <goal>shade</goal> </goals> <configuration> <transformers> <transformer 
-				implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"> 
-				<mainClass>${project.groupId}.${project.artifactId}.app.MainApp</mainClass> 
-				</transformer> </transformers> </configuration> </execution> </executions> 
-				</plugin> -->
 
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -75,7 +66,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>${project.groupId}.${project.artifactId}.DataviewerDemo</mainClass>
+					<mainClass>${project.groupId}.gui.HistoricalDataGui</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
