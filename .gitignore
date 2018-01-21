@@ -61,3 +61,4 @@ buildNumber.properties
 # eclipse
 .classpath
 .project
+.settings*
