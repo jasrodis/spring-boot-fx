@@ -4,8 +4,7 @@
 	<appender name="cryptosim.gui" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<pattern>
-				<pattern>%d{HH:mm:ss.SSS} > %28thread %highlight(%-5level)
-					%cyan(%40logger{30}:%10L) %highlight(=>) %green(%msg) %n</pattern>
+				<pattern>%d{HH:mm:ss.SSS} > %28thread %highlight(%-5level) %cyan(%40logger{30}:%10L) %highlight(=>) %green(%msg) %n</pattern>
 			</pattern>
 		</encoder>
 	</appender>
