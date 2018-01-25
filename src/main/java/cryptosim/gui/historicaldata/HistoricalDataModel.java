@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import cryptosim.repository.BitfinexRepository;
+import cryptosim.service.RepositoryService;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -24,13 +24,10 @@ public class HistoricalDataModel {
 	private final StringProperty selectedUser = new SimpleStringProperty(this, "selectedUser", null);
 
 	/* Repository Service */
-//	private final RepositoryService repositoryService;
-	
-	private final BitfinexRepository repo;
+	private final RepositoryService repositoryService;
 
-	public HistoricalDataModel(BitfinexRepository repo) {
-		this.repo = repo;
-//		this.repositoryService = repositoryService;
+	public HistoricalDataModel(RepositoryService repositoryService) {
+		this.repositoryService = repositoryService;
 	}
 
 	/*
