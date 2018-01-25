@@ -2,12 +2,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>cryptosim.data</groupId>
-	<artifactId>historical-data</artifactId>
+	<groupId>cryptosim.gui</groupId>
+	<artifactId>cryptosim-ui</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>historical-data</name>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+	</parent>
+
+	<name>cryptosim-ui</name>
 
 	<properties>
 		<slf4j.version>1.7.12</slf4j.version>
@@ -43,7 +49,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>${project.groupId}.${project.artifactId}.DataviewerDemo</mainClass>
+							<mainClass>${project.groupId}.CryptosimGuiApp</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
@@ -66,7 +72,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>${project.groupId}.gui.HistoricalDataGui</mainClass>
+					<mainClass>${project.groupId}.CryptosimGuiApp</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -86,7 +92,7 @@
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>1.0.13</version>
+			<version>1.2.3</version>
 		</dependency>
 
 		<dependency>
@@ -100,6 +106,19 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+			<version>1.5.9.RELEASE</version>
+		</dependency>
+
 
 	</dependencies>
 </project>

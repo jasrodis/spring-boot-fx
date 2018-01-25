@@ -1,0 +1,24 @@
+.x-value-indicator-label{
+    -fx-background-color: pink;
+}
+.x-value-indicator-line {
+    -fx-stroke: pink;
+    -fx-stroke-width: 2;
+}
+.x-range-indicator-rect{
+    -fx-fill: rgba(173, 255, 47, 0.5);
+}
+ 
+.y-range-indicator-label{
+    -fx-background-color: orange;
+}
+.y-range-indicator-rect{
+    -fx-stroke: orange;
+    -fx-fill: #416ef468;
+}
+.y-value-indicator-label{
+    -fx-background-color: red;
+}
+.y-value-indicator-line {
+    -fx-stroke: red;
+}
