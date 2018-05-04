@@ -1,4 +1,7 @@
-# spring-boot-fx
+<p align="center">
+	<img align="center" src="src/main/resources/images/boot-fx.png?raw=true"/>
+</p>
+
 
 <h2 align="center">Spring Boot & JavaFX </h2>
 
