@@ -7,6 +7,7 @@ import org.jasrodis.bootfx.chart.examples.DataViewerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.TABTITLE;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -28,18 +29,16 @@ import javafx.scene.layout.VBox;
 @Component
 public class ToAddView extends BorderPane {
 
-	private final static Logger log = LoggerFactory.getLogger(ToAddView.class);
+	private static final Logger log = LoggerFactory.getLogger(ToAddView.class);
 
-	private final String TABTITLE = "Historical Data";
+	VBox vbLeft = new VBox();
+	GridPane gpLeft = new GridPane();
 
-	VBox leftVBox = new VBox();
-	GridPane leftGridPane = new GridPane();
+	Label lbExample = new Label("Example:");
+	ComboBox<String> cbExample = new ComboBox<>();
 
-	Label lbExchange = new Label("Exchange:");
-	ComboBox<String> cbExchange = new ComboBox<>();
-
-	Label lbPair = new Label("Pair:");
-	TextField tfPair = new TextField();
+	Label lbExample2 = new Label("Example2:");
+	TextField tfExample = new TextField();
 
 	Label lbStartTime = new Label("Start time:");
 	DatePicker dpStartTime = new DatePicker();
@@ -47,10 +46,10 @@ public class ToAddView extends BorderPane {
 	Label lbEndTime = new Label("End time:");
 	DatePicker dpEndTime = new DatePicker();
 
-	ListView<String> listView = new ListView<>();
+	ListView<String> lvMain = new ListView<>();
 	ArrayList<String> list = new ArrayList<>();
 
-	HBox bottomHBox = new HBox();
+	HBox hbBottom = new HBox();
 
 	Button btPlotNew = new Button("Plot New");
 	Button btAppendPlot = new Button("Append Plot");
@@ -58,7 +57,7 @@ public class ToAddView extends BorderPane {
 	private final ToAddModel model;
 
 	public ToAddView(ToAddModel model) {
-		log.info("Initializing CommView");
+		log.info("Initializing {}", getClass().getSimpleName());
 		this.model = model;
 		Platform.runLater(() -> {
 			setUserData(TABTITLE);
@@ -70,7 +69,7 @@ public class ToAddView extends BorderPane {
 
 	private void initFieldData() {
 		list.addAll(Arrays.asList("aaa", "bbb", "ccc"));
-		listView.setItems(FXCollections.observableArrayList(list));
+		lvMain.setItems(FXCollections.observableArrayList(list));
 	}
 
 	private void layoutForm() {
@@ -81,38 +80,38 @@ public class ToAddView extends BorderPane {
 
 	private void bindFields() {
 		// Bind fields to model
-		cbExchange.setItems(model.getExchangeNames());
+		cbExample.setItems(model.getExchangeNames());
 		btPlotNew.disableProperty()
-				.bind(cbExchange.selectionModelProperty().isNotNull().and(tfPair.textProperty().isNotEmpty()).not());
+				.bind(cbExample.selectionModelProperty().isNotNull().and(tfExample.textProperty().isNotEmpty()).not());
 		btAppendPlot.disableProperty()
-				.bind(cbExchange.selectionModelProperty().isNotNull().and(tfPair.textProperty().isNotEmpty()).not());
+				.bind(cbExample.selectionModelProperty().isNotNull().and(tfExample.textProperty().isNotEmpty()).not());
 	}
 
 	private Node setLeftPanel() {
 		// GridPane
-		leftGridPane.setAlignment(Pos.CENTER);
-		leftGridPane.setHgap(5);
-		leftGridPane.setVgap(5);
+		gpLeft.setAlignment(Pos.CENTER);
+		gpLeft.setHgap(5);
+		gpLeft.setVgap(5);
 
-		leftGridPane.add(lbExchange, 1, 1);
-		leftGridPane.add(cbExchange, 2, 1);
+		gpLeft.add(lbExample, 1, 1);
+		gpLeft.add(cbExample, 2, 1);
 
-		leftGridPane.add(lbPair, 1, 2);
-		leftGridPane.add(tfPair, 2, 2);
+		gpLeft.add(lbExample2, 1, 2);
+		gpLeft.add(tfExample, 2, 2);
 
-		leftGridPane.add(lbStartTime, 1, 3);
-		leftGridPane.add(dpStartTime, 2, 3);
+		gpLeft.add(lbStartTime, 1, 3);
+		gpLeft.add(dpStartTime, 2, 3);
 
-		leftGridPane.add(lbEndTime, 1, 4);
-		leftGridPane.add(dpEndTime, 2, 4);
+		gpLeft.add(lbEndTime, 1, 4);
+		gpLeft.add(dpEndTime, 2, 4);
 
-		cbExchange.setMaxWidth(Double.MAX_VALUE);
+		cbExample.setMaxWidth(Double.MAX_VALUE);
 
-		leftVBox.setPadding(new Insets(5.0));
-		leftVBox.getChildren().add(leftGridPane);
+		vbLeft.setPadding(new Insets(5.0));
+		vbLeft.getChildren().add(gpLeft);
 
-		VBox.setVgrow(leftVBox, Priority.ALWAYS);
-		return leftVBox;
+		VBox.setVgrow(vbLeft, Priority.ALWAYS);
+		return vbLeft;
 	}
 
 	private Node setCenterPanel() {
@@ -120,12 +119,12 @@ public class ToAddView extends BorderPane {
 	}
 
 	private Node setBottomPanel() {
-		bottomHBox.setAlignment(Pos.CENTER);
-		HBox.setHgrow(bottomHBox, Priority.ALWAYS);
-		bottomHBox.setPadding(new Insets(5.0));
-		bottomHBox.setSpacing(10.0);
-		bottomHBox.getChildren().addAll(btPlotNew, btAppendPlot);
-		return bottomHBox;
+		hbBottom.setAlignment(Pos.CENTER);
+		HBox.setHgrow(hbBottom, Priority.ALWAYS);
+		hbBottom.setPadding(new Insets(5.0));
+		hbBottom.setSpacing(10.0);
+		hbBottom.getChildren().addAll(btPlotNew, btAppendPlot);
+		return hbBottom;
 	}
 
 	private HBox test1() {
