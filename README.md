@@ -44,9 +44,9 @@ Following the MVP (Model-View-Presenter) architecture suggested in [Learn JavaFX
 * Bootstrap3 theme
 
 <p align="center">
-	<img align="center" src="src/main/resources/images/colors-logback.png?raw=true" alt="colours logback" height="342" width="442"/>
-	<img align="center" src="src/main/resources/images/plotly-charts.png?raw=true" alt="charts" height="342" width="442"/>
-	<img align="center" src="src/main/resources/images/programmatic-form.png?raw=true" alt="frm" height="342" width="442"/>
+	<img align="center" src="src/main/resources/images/colors-logback.png?raw=true" alt="colours logback" height="242" width="242"/>
+	<img align="center" src="src/main/resources/images/plotly-charts.png?raw=true" alt="charts" height="242" width="242"/>
+	<img align="center" src="src/main/resources/images/programmatic-form.png?raw=true" alt="frm" height="242" width="242"/>
 </p>
 
 
