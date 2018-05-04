@@ -28,6 +28,7 @@
 
 > **spring-boot-fx** is the easiest boilerplate to kick start new applications on Spring Boot, JavaFX, MongoDB and tons of other cool features.
  
+Following the MVP (Model-View-Presenter) architecture suggested in [Learn JavaFX 8: Building User Experience and Interfaces with Java 8 by Kishori Sharan](https://www.apress.com/de/book/9781484211434)
 
 ## Run me!
 
