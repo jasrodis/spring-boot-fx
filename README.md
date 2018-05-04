@@ -24,6 +24,12 @@
   </a>
 </p>
 
+## Run me!
+
+*  Go to the project location.
+*  Run the maven wrapper!  `./mvnw clean compile exec:java`
+
+
 
 ## JavaFX To Read
 * Nice and clear Java tutorial: https://www.tutorialspoint.com/java/
