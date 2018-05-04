@@ -9,9 +9,9 @@ import com.mongodb.MongoClient;
 @Configuration
 public class MongoConfig extends AbstractMongoConfiguration {
 
-	private final static String DB_NAME = "db-name";
-	private final static String HOST_NAME = "127.0.0.1";
-	private final static Integer PORT = 27017;
+	private static final  String DB_NAME = "db-name";
+	private static final String HOST_NAME = "127.0.0.1";
+	private static final Integer PORT = 27017;
 
 	@Override
 	protected String getDatabaseName() {

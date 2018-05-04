@@ -1,5 +1,10 @@
 package org.jasrodis.bootfx;
 
+import static org.jasrodis.bootfx.BootFxConstants.CSS_PATH;
+import static org.jasrodis.bootfx.BootFxConstants.HEIGHT;
+import static org.jasrodis.bootfx.BootFxConstants.PROJECT_TITLE;
+import static org.jasrodis.bootfx.BootFxConstants.WIDTH;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -8,13 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-import static org.jasrodis.bootfx.BootFxConstants.CSS_PATH;
-import static org.jasrodis.bootfx.BootFxConstants.PROJECT_TITLE;
-
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 @SpringBootApplication
@@ -26,7 +27,6 @@ public class BootFxApp extends Application {
 
 	private static final Logger log = LoggerFactory.getLogger(BootFxApp.class);
 
-	
 	private Scene scene;
 
 	public static void main(final String[] args) {
@@ -54,8 +54,8 @@ public class BootFxApp extends Application {
 	private void startApplication(final Stage primaryStage) {
 		log.info("Starting {}!", PROJECT_TITLE);
 		primaryStage.setTitle(PROJECT_TITLE);
-		primaryStage.setHeight(Screen.getPrimary().getVisualBounds().getHeight() / 2);
-		primaryStage.setWidth(Screen.getPrimary().getVisualBounds().getWidth() / 2);
+		primaryStage.setHeight(HEIGHT);
+		primaryStage.setWidth(WIDTH);
 		primaryStage.centerOnScreen();
 		primaryStage.setOnCloseRequest(e -> {
 			Platform.exit();
