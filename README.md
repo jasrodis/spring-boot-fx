@@ -1,5 +1,26 @@
 # spring-boot-fx
 
+<h2 align="center">Spring Boot & JavaFX </h2>
+
+<p align="center">
+  <em>
+  JavaFX
+  · Spring Boot
+  · Logback
+  · MongoDB
+  · ControlsFX
+  · FontAwesome
+</p>
+
+<p align="center">
+  <a href="https://travis-ci.org/jasrodis/spring-boot-fx">
+    <img alt="travis" src="https://img.shields.io/travis/jasrodis/spring-boot-fx.svg?style=flat-square">
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img alt="licence" src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square">
+  </a>
+</p>
+
 
 ## JavaFX To Read
 * Nice and clear Java tutorial: https://www.tutorialspoint.com/java/
