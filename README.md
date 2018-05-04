@@ -24,6 +24,11 @@
   </a>
 </p>
 
+## Intro
+
+> **spring-boot-fx** is the easiest boilerplate to kick start new applications on Spring Boot, JavaFX, MongoDB and tons of other cool features.
+ 
+
 ## Run me!
 
 *  Go to the project location.
