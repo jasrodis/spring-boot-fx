@@ -15,7 +15,7 @@ public class ToAddController {
 	private final ToAddView view;
 
 	public ToAddController(ToAddModel model, ToAddView view) {
-		log.info("Initializing HistoricalData Controller");
+		log.info("Initializing [{}]", getClass().getSimpleName());
 		this.model = model;
 		this.view = view;
 		attachEvents();
@@ -26,7 +26,7 @@ public class ToAddController {
 	}
 
 	public void attachEvents() {
-		view.btPlotNew.setOnAction((e) -> log.info("Somehting"));
+		view.btPlotNew.setOnAction(e -> log.info("Pressed"));
 	}
 
 }

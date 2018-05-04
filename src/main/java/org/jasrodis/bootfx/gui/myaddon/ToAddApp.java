@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.CSS_PATH;
+import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.PROJECT_TITLE;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -16,26 +18,24 @@ import javafx.stage.Stage;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan({"cryptosim.*"})
+@ComponentScan({"org.jasrodis.bootfx.*"})
 public class ToAddApp extends Application {
+	
+	private static final Logger log = LoggerFactory.getLogger(ToAddApp.class);
 
 	private ConfigurableApplicationContext springContext;
 
-	private static final Logger log = LoggerFactory.getLogger(ToAddApp.class);
-
-	private final static String CSS_PATH = "/styles/bootstrap3.css";
-	private final static String PROJECT_TITLE = "Data Manager";
 	private Scene scene;
 
-	public static void main(final String[] args) throws Exception {
+	public static void main(final String[] args)  {
 		launch(ToAddApp.class, args);
 	}
 
 	@Override
 	public void init() throws Exception {
 		springContext = SpringApplication.run(ToAddApp.class);
-		ToAddController c = (ToAddController) springContext.getBean(ToAddController.class);
-		scene = new Scene(c.getView());
+		ToAddController controller = springContext.getBean(ToAddController.class);
+		scene = new Scene(controller.getView());
 		scene.getStylesheets().add(CSS_PATH);
 	}
 
@@ -49,13 +49,13 @@ public class ToAddApp extends Application {
 		startApplication(stage);
 	}
 
-	private void startApplication(final Stage primaryStage) throws Exception {
-		log.info("Starting application!");
+	private void startApplication(final Stage primaryStage) {
+		log.info("Starting {}!", PROJECT_TITLE);
 		primaryStage.setTitle(PROJECT_TITLE);
 		primaryStage.setHeight(Screen.getPrimary().getVisualBounds().getHeight() / 2);
 		primaryStage.setWidth(Screen.getPrimary().getVisualBounds().getWidth() / 2);
 		primaryStage.centerOnScreen();
-		primaryStage.setOnCloseRequest((e) -> {
+		primaryStage.setOnCloseRequest(e -> {
 			Platform.exit();
 			System.exit(0);
 		});

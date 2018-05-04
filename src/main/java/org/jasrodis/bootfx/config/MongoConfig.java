@@ -9,7 +9,7 @@ import com.mongodb.MongoClient;
 @Configuration
 public class MongoConfig extends AbstractMongoConfiguration {
 
-	private final static String DB_NAME = "convoy";
+	private final static String DB_NAME = "db-name";
 	private final static String HOST_NAME = "127.0.0.1";
 	private final static Integer PORT = 27017;
 

@@ -17,20 +17,19 @@ import javafx.scene.layout.BorderPane;
 public class BootFxView extends BorderPane {
 
 	private static final Logger log = LoggerFactory.getLogger(BootFxView.class);
-	private final ToAddView hview;
+	private final ToAddView view;
 
 	TabPane tabPane = new TabPane();
 	List<Tab> tabList = new ArrayList<>();
 
 	public BootFxView(ToAddView hview) {
-		this.hview = hview;
+		this.view = hview;
 		Platform.runLater(() -> {
-			log.info("Initializzed CryptoGuiView : !! ");
+			log.info("Initialized  [{}] ", getClass().getSimpleName());
 			Tab tabToAdd = new Tab();
 			tabToAdd.setText("Sample tab");
 			tabToAdd.setContent(hview);
 			tabToAdd.setClosable(false);
-
 			tabList.add(tabToAdd);
 			tabPane.getTabs().add(tabToAdd);
 			setCenter(tabPane);

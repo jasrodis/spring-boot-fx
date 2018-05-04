@@ -5,9 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+
+import static org.jasrodis.bootfx.BootFxConstants.CSS_PATH;
+import static org.jasrodis.bootfx.BootFxConstants.PROJECT_TITLE;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -24,19 +26,18 @@ public class BootFxApp extends Application {
 
 	private static final Logger log = LoggerFactory.getLogger(BootFxApp.class);
 
-	private final static String CSS_PATH = "/styles/bootstrap3.css";
-	private final static String PROJECT_TITLE = "Data Manager";
+	
 	private Scene scene;
 
-	public static void main(final String[] args) throws Exception {
+	public static void main(final String[] args) {
 		launch(BootFxApp.class, args);
 	}
 
 	@Override
 	public void init() throws Exception {
 		springContext = SpringApplication.run(BootFxApp.class);
-		BootFxController c = (BootFxController) springContext.getBean(BootFxController.class);
-		scene = new Scene(c.getView());
+		BootFxController controller = springContext.getBean(BootFxController.class);
+		scene = new Scene(controller.getView());
 		scene.getStylesheets().add(CSS_PATH);
 	}
 
@@ -50,13 +51,13 @@ public class BootFxApp extends Application {
 		startApplication(stage);
 	}
 
-	private void startApplication(final Stage primaryStage) throws Exception {
-		log.info("Starting application!");
+	private void startApplication(final Stage primaryStage) {
+		log.info("Starting {}!", PROJECT_TITLE);
 		primaryStage.setTitle(PROJECT_TITLE);
 		primaryStage.setHeight(Screen.getPrimary().getVisualBounds().getHeight() / 2);
 		primaryStage.setWidth(Screen.getPrimary().getVisualBounds().getWidth() / 2);
 		primaryStage.centerOnScreen();
-		primaryStage.setOnCloseRequest((e) -> {
+		primaryStage.setOnCloseRequest(e -> {
 			Platform.exit();
 			System.exit(0);
 		});
