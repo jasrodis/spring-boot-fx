@@ -36,7 +36,7 @@ public class FormFxmlApp extends Application {
 	public void init() throws Exception {
 		springContext = SpringApplication.run(FormFxmlApp.class);
 		FormFxmlController controller = springContext.getBean(FormFxmlController.class);
-		scene = new Scene(controller.getView());
+		scene = new Scene(controller.getViewAsParent());
 		scene.getStylesheets().add(CSS_PATH);
 
 	}

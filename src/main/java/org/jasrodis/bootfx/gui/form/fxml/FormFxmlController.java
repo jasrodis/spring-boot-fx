@@ -1,8 +1,8 @@
 package org.jasrodis.bootfx.gui.form.fxml;
 
-import static org.jasrodis.bootfx.gui.form.fxml.FormFxmlConstants.FXML_PATH;
 import static org.jasrodis.bootfx.gui.form.fxml.FormFxmlConstants.TAB_NAME;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -123,9 +123,15 @@ public class FormFxmlController implements Initializable {
 		return model;
 	}
 
-	public Parent getView() throws Exception {
-		Parent view = new FXMLLoader(getClass().getResource(FXML_PATH)).load();
-		view.setUserData(TAB_NAME);
+	public Parent getViewAsParent() {
+		Parent view = null;
+		try {
+			view = FXMLLoader.load(getClass().getResource(FormFxmlConstants.FXML_PATH));
+			view.setUserData(TAB_NAME);
+		} catch (IOException e) {
+			log.error("Error in Loading FXML file ", e);
+			e.printStackTrace();
+		}
 		return view;
 	}
 
