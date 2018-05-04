@@ -37,7 +37,7 @@ public class ChartApp extends Application {
 		springContext = SpringApplication.run(ChartApp.class);
 		ChartController controller = springContext.getBean(ChartController.class);
 		scene = new Scene(controller.getView());
-		
+		scene.getStylesheets().add(CSS_PATH);
 	}
 
 	@Override
@@ -53,7 +53,6 @@ public class ChartApp extends Application {
 	private void startApplication(final Stage primaryStage) {
 		log.info("Starting {}!", PROJECT_TITLE);
 		primaryStage.setTitle(PROJECT_TITLE);
-		primaryStage.getScene().getStylesheets().add(CSS_PATH);
 		primaryStage.setHeight(Screen.getPrimary().getVisualBounds().getHeight() / 2);
 		primaryStage.setWidth(Screen.getPrimary().getVisualBounds().getWidth() / 2);
 		primaryStage.centerOnScreen();
