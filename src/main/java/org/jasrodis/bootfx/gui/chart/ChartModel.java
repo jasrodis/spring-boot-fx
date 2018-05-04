@@ -1,4 +1,4 @@
-package org.jasrodis.bootfx.gui.mytab;
+package org.jasrodis.bootfx.gui.chart;
 
 import java.util.Arrays;
 

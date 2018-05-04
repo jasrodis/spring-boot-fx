@@ -1,6 +1,6 @@
-package org.jasrodis.bootfx.gui.mytab;
+package org.jasrodis.bootfx.gui.chart;
 
-import static org.jasrodis.bootfx.gui.mytab.ChartConstants.TABTITLE;
+import static org.jasrodis.bootfx.gui.chart.ChartConstants.TABTITLE;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,7 +53,6 @@ public class ChartView extends BorderPane {
 	HBox hbBottom = new HBox();
 
 	Button btPlotNew = new Button("Plot New");
-	Button btAppendPlot = new Button("Append Plot");
 
 	private final ChartModel model;
 
@@ -83,8 +82,6 @@ public class ChartView extends BorderPane {
 		// Bind fields to model
 		cbExample.setItems(model.getNames());
 		btPlotNew.disableProperty()
-				.bind(cbExample.selectionModelProperty().isNotNull().and(tfExample.textProperty().isNotEmpty()).not());
-		btAppendPlot.disableProperty()
 				.bind(cbExample.selectionModelProperty().isNotNull().and(tfExample.textProperty().isNotEmpty()).not());
 	}
 
@@ -124,7 +121,7 @@ public class ChartView extends BorderPane {
 		HBox.setHgrow(hbBottom, Priority.ALWAYS);
 		hbBottom.setPadding(new Insets(5.0));
 		hbBottom.setSpacing(10.0);
-		hbBottom.getChildren().addAll(btPlotNew, btAppendPlot);
+		hbBottom.getChildren().addAll(btPlotNew);
 		return hbBottom;
 	}
 

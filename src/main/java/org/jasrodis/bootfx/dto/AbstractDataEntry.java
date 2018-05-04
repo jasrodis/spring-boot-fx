@@ -9,5 +9,4 @@ public class AbstractDataEntry {
 	@Id
 	private String id;
 
-
 }

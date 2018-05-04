@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.controlsfx.glyphfont.*?>
+
+<BorderPane minHeight="300.0" minWidth="400.0" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jasrodis.bootfx.gui.form.fxml.FormFxmlController">
+   <center>
+      <AnchorPane maxHeight="150.0" maxWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane alignment="CENTER" hgap="5.0" prefHeight="300.0" prefWidth="400.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="4">
+                     <children>
+                        <Button fx:id="btnSave" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#saveData" text="Save">
+                           <graphic>
+                              <Glyph fontFamily="FontAwesome" icon="SAVE" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnClose" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#closeApplication" text="Close">
+                           <graphic>
+                              <Glyph fontFamily="FontAwesome" icon="CLOSE" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Label text="Person Id:" />
+                  <Label text="First Name:" GridPane.rowIndex="1" />
+                  <Label text="Last Name:" GridPane.rowIndex="2" />
+                  <Label text="Birth Date:" GridPane.rowIndex="3" />
+                  <Label text="Age Category:" GridPane.rowIndex="4" />
+                  <TextField fx:id="tfPersonId" GridPane.columnIndex="1" />
+                  <TextField fx:id="tfFirstName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="tfLastName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="tfBirthDate" onAction="#handleBirthDateChange" promptText="dd/mm/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="tfAgeCategory" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

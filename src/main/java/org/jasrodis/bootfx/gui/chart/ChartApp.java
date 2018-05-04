@@ -1,7 +1,7 @@
-package org.jasrodis.bootfx.gui.mytab;
+package org.jasrodis.bootfx.gui.chart;
 
-import static org.jasrodis.bootfx.gui.mytab.ChartConstants.CSS_PATH;
-import static org.jasrodis.bootfx.gui.mytab.ChartConstants.PROJECT_TITLE;
+import static org.jasrodis.bootfx.gui.chart.ChartConstants.CSS_PATH;
+import static org.jasrodis.bootfx.gui.chart.ChartConstants.PROJECT_TITLE;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

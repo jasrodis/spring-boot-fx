@@ -1,4 +1,4 @@
-package org.jasrodis.bootfx.gui.form.programmatic;
+package org.jasrodis.bootfx.gui.form.fxml;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -18,14 +18,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 @Component
-public class FormModel {
+public class FormFxmlModel {
 
-	private static final Logger log = LoggerFactory.getLogger(FormModel.class);
-
-	public enum AgeCategory {
-		BABY, CHILD, TEEN, ADULT, SENIOR, UNKNOWN
-	}
-
+	private static final Logger log = LoggerFactory.getLogger(FormFxmlModel.class);
 	private final ReadOnlyIntegerWrapper personId = new ReadOnlyIntegerWrapper(this, "personId",
 			personSequence.incrementAndGet());
 	private final StringProperty firstName = new SimpleStringProperty(this, "firstName", null);
@@ -34,6 +29,20 @@ public class FormModel {
 
 	// Keeps track of last generated person id
 	private static AtomicInteger personSequence = new AtomicInteger(0);
+
+	public enum AgeCategory {
+		BABY, CHILD, TEEN, ADULT, SENIOR, UNKNOWN
+	}
+
+	public FormFxmlModel() {
+		this(null, null, null);
+	}
+
+	public FormFxmlModel(String firstName, String lastName, LocalDate birthDate) {
+		this.firstName.set(firstName);
+		this.lastName.set(lastName);
+		this.birthDate.set(birthDate);
+	}
 
 	/* personId Property */
 	public final int getPersonId() {
@@ -84,7 +93,7 @@ public class FormModel {
 	}
 
 	/* Domain specific business rules */
-	public boolean isValidBirthDate(LocalDate bdate) {
+	public boolean isValidBirthDate(final LocalDate bdate) {
 		return isValidBirthDate(bdate, new ArrayList<>());
 	}
 
@@ -99,6 +108,7 @@ public class FormModel {
 			errorList.add("Birth date must not be in future.");
 			return false;
 		}
+
 		return true;
 	}
 
@@ -108,7 +118,7 @@ public class FormModel {
 	}
 
 	/* Domain specific business rules */
-	public boolean isValidPerson(FormModel p, List<String> errorList) {
+	public boolean isValidPerson(FormFxmlModel p, List<String> errorList) {
 		boolean isValid = true;
 
 		String fn = p.firstName.get();
@@ -156,9 +166,10 @@ public class FormModel {
 	public boolean save(List<String> errorList) {
 		boolean isSaved = false;
 		if (isValidPerson(errorList)) {
-			log.info("Saved : {}", this);
+			log.info("Saved : {}, ", this);
 			isSaved = true;
 		}
+
 		return isSaved;
 	}
 
