@@ -1,0 +1,11 @@
+# ===================================================================
+# Application configuration
+#
+# This configuration is accessible via the AppConfig class
+#
+# Example usage can be found here: https://dzone.com/articles/read-yaml-in-java-with-jackson
+# YAML Highlighting plugin: https://marketplace.eclipse.org/content/yedit
+# ===================================================================
+                               
+css:
+    mainCssLocation: /styles/bootstrap3.css
