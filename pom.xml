@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>cryptosim</groupId>
-	<artifactId>cryptosim-ui</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<groupId>org.jasrodis</groupId>
+	<artifactId>spring-boot-fx</artifactId>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<parent>
@@ -13,16 +13,23 @@
 		<version>1.5.9.RELEASE</version>
 	</parent>
 
-	<name>cryptosim-ui</name>
+	<name>spring-boot-fx</name>
 
 	<properties>
 		<slf4j.version>1.7.12</slf4j.version>
 		<log4j.version>1.2.17</log4j.version>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
 	<build>
 
-		<finalName>historical-data</finalName>
+		<finalName>spring-boot-fx</finalName>
 
 		<!-- Resources -->
 		<resources>
@@ -83,9 +90,9 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>charts</groupId>
-			<artifactId>javafx-dataviewer</artifactId>
-			<version>1.0.3</version>
+			<groupId>com.github.jasrodis</groupId>
+			<artifactId>javafx-dataviewer-wrapper</artifactId>
+			<version>-SNAPSHOT</version>
 		</dependency>
 
 		<!-- Logging Logback -->
