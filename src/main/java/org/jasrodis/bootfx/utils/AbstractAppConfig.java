@@ -1,4 +1,4 @@
-package org.jasrodis.bootfx.gui.utils;
+package org.jasrodis.bootfx.utils;
 
 import java.io.File;
 
