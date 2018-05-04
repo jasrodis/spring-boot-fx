@@ -1,6 +1,6 @@
-package org.jasrodis.bootfx.gui.myaddon;
+package org.jasrodis.bootfx.gui.mytab;
 
-import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.TABTITLE;
+import static org.jasrodis.bootfx.gui.mytab.ChartConstants.TABTITLE;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,9 +28,9 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 @Component
-public class ToAddView extends BorderPane {
+public class ChartView extends BorderPane {
 
-	private static final Logger log = LoggerFactory.getLogger(ToAddView.class);
+	private static final Logger log = LoggerFactory.getLogger(ChartView.class);
 
 	VBox vbLeft = new VBox();
 	GridPane gpLeft = new GridPane();
@@ -55,10 +55,10 @@ public class ToAddView extends BorderPane {
 	Button btPlotNew = new Button("Plot New");
 	Button btAppendPlot = new Button("Append Plot");
 
-	private final ToAddModel model;
+	private final ChartModel model;
 
-	public ToAddView(ToAddModel model) {
-		log.info("Initializing {}", getClass().getSimpleName());
+	public ChartView(ChartModel model) {
+		log.info("Initializing [{}]", getClass().getSimpleName());
 		this.model = model;
 		Platform.runLater(() -> {
 			setUserData(TABTITLE);
@@ -81,7 +81,7 @@ public class ToAddView extends BorderPane {
 
 	private void bindFields() {
 		// Bind fields to model
-		cbExample.setItems(model.getExchangeNames());
+		cbExample.setItems(model.getNames());
 		btPlotNew.disableProperty()
 				.bind(cbExample.selectionModelProperty().isNotNull().and(tfExample.textProperty().isNotEmpty()).not());
 		btAppendPlot.disableProperty()

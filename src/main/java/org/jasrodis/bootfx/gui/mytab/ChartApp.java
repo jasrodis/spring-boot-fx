@@ -1,7 +1,7 @@
-package org.jasrodis.bootfx.gui.myaddon;
+package org.jasrodis.bootfx.gui.mytab;
 
-import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.CSS_PATH;
-import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.PROJECT_TITLE;
+import static org.jasrodis.bootfx.gui.mytab.ChartConstants.CSS_PATH;
+import static org.jasrodis.bootfx.gui.mytab.ChartConstants.PROJECT_TITLE;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,25 +19,25 @@ import javafx.stage.Stage;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan({"org.jasrodis.bootfx.*"})
-public class ToAddApp extends Application {
+@ComponentScan({"org.jasrodis.*"})
+public class ChartApp extends Application {
 	
-	private static final Logger log = LoggerFactory.getLogger(ToAddApp.class);
+	private static final Logger log = LoggerFactory.getLogger(ChartApp.class);
 
 	private ConfigurableApplicationContext springContext;
 
 	private Scene scene;
 
 	public static void main(final String[] args)  {
-		launch(ToAddApp.class, args);
+		launch(ChartApp.class, args);
 	}
 
 	@Override
 	public void init() throws Exception {
-		springContext = SpringApplication.run(ToAddApp.class);
-		ToAddController controller = springContext.getBean(ToAddController.class);
+		springContext = SpringApplication.run(ChartApp.class);
+		ChartController controller = springContext.getBean(ChartController.class);
 		scene = new Scene(controller.getView());
-		scene.getStylesheets().add(CSS_PATH);
+		
 	}
 
 	@Override
@@ -53,6 +53,7 @@ public class ToAddApp extends Application {
 	private void startApplication(final Stage primaryStage) {
 		log.info("Starting {}!", PROJECT_TITLE);
 		primaryStage.setTitle(PROJECT_TITLE);
+		primaryStage.getScene().getStylesheets().add(CSS_PATH);
 		primaryStage.setHeight(Screen.getPrimary().getVisualBounds().getHeight() / 2);
 		primaryStage.setWidth(Screen.getPrimary().getVisualBounds().getWidth() / 2);
 		primaryStage.centerOnScreen();
@@ -63,6 +64,5 @@ public class ToAddApp extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
-	
 
 }
