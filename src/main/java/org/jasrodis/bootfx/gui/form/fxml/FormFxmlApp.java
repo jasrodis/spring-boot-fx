@@ -33,7 +33,7 @@ public class FormFxmlApp extends Application {
 	}
 
 	@Override
-	public void init() throws Exception {
+	public void init() {
 		springContext = SpringApplication.run(FormFxmlApp.class);
 		FormFxmlController controller = springContext.getBean(FormFxmlController.class);
 		scene = new Scene(controller.getViewAsParent());
@@ -42,12 +42,12 @@ public class FormFxmlApp extends Application {
 	}
 
 	@Override
-	public void stop() throws Exception {
+	public void stop() {
 		springContext.stop();
 	}
 
 	@Override
-	public void start(Stage stage) throws Exception {
+	public void start(Stage stage) {
 		startApplication(stage);
 	}
 
