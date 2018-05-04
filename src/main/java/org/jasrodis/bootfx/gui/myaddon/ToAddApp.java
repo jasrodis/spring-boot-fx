@@ -1,5 +1,8 @@
 package org.jasrodis.bootfx.gui.myaddon;
 
+import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.CSS_PATH;
+import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.PROJECT_TITLE;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -7,8 +10,6 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.CSS_PATH;
-import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.PROJECT_TITLE;
 
 import javafx.application.Application;
 import javafx.application.Platform;

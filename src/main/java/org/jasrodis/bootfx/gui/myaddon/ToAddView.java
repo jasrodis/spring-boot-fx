@@ -1,13 +1,14 @@
 package org.jasrodis.bootfx.gui.myaddon;
 
+import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.TABTITLE;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import org.jasrodis.bootfx.chart.examples.DataViewerFactory;
+import org.charts.dataviewer.javafx.example.factory.JavaFxDataViewerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import static org.jasrodis.bootfx.gui.myaddon.ToAddConstants.TABTITLE;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -115,7 +116,7 @@ public class ToAddView extends BorderPane {
 	}
 
 	private Node setCenterPanel() {
-		return test1();
+		return createSampleChart();
 	}
 
 	private Node setBottomPanel() {
@@ -127,9 +128,9 @@ public class ToAddView extends BorderPane {
 		return hbBottom;
 	}
 
-	private HBox test1() {
+	private HBox createSampleChart() {
 		VBox vboxMiddle = new VBox();
-		vboxMiddle.getChildren().add(DataViewerFactory.createDataViewerExample1());
+		vboxMiddle.getChildren().add(JavaFxDataViewerFactory.createDataViewerExample1());
 
 		HBox hbox = new HBox();
 		hbox.getChildren().addAll(vboxMiddle);
