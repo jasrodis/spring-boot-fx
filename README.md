@@ -35,7 +35,12 @@ Following the MVP (Model-View-Presenter) architecture suggested in [Learn JavaFX
 *  Go to the project location.
 *  Run the maven wrapper!  `./mvnw clean compile exec:java`
 
+## Features
 
+* Coloured logging with logback
+* Programmatic JavaFX form example
+* Fxml JavaFX form example
+* application.yml Jackson enabled properties file
 
 ## JavaFX To Read
 * Nice and clear Java tutorial: https://www.tutorialspoint.com/java/
