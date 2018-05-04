@@ -126,6 +126,7 @@ public class FormFxmlController implements Initializable {
 	public Parent getViewAsParent() {
 		Parent view = null;
 		try {
+			log.info("laoding fxml file");
 			view = FXMLLoader.load(getClass().getResource(FormFxmlConstants.FXML_PATH));
 			view.setUserData(TAB_NAME);
 		} catch (IOException e) {
