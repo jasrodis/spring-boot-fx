@@ -1,8 +1,6 @@
 package org.jasrodis.bootfx;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.jasrodis.bootfx.gui.form.programmatic.FormView;
 import org.jasrodis.bootfx.gui.mytab.ChartView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,21 +15,29 @@ import javafx.scene.layout.BorderPane;
 public class BootFxView extends BorderPane {
 
 	private static final Logger log = LoggerFactory.getLogger(BootFxView.class);
-	private final ChartView view;
+	
+	private final ChartView chartView;
+	private final FormView formView;
 
 	TabPane tabPane = new TabPane();
-	List<Tab> tabList = new ArrayList<>();
 
-	public BootFxView(ChartView hview) {
-		this.view = hview;
+	public BootFxView(ChartView chartView, FormView formView) {
+		this.chartView = chartView;
+		this.formView = formView;
 		Platform.runLater(() -> {
 			log.info("Initializing  [{}] ", getClass().getSimpleName());
-			Tab tabToAdd = new Tab();
-			tabToAdd.setText("Sample tab");
-			tabToAdd.setContent(hview);
-			tabToAdd.setClosable(false);
-			tabList.add(tabToAdd);
-			tabPane.getTabs().add(tabToAdd);
+			
+			Tab chartTab = new Tab();
+			chartTab.setText(chartView.getUserData().toString());
+			chartTab.setContent(chartView);
+			chartTab.setClosable(false);
+			
+			Tab formTab = new Tab();
+			formTab.setText(formView.getUserData().toString());
+			formTab.setContent(formView);
+			formTab.setClosable(false);
+			
+			tabPane.getTabs().addAll(chartTab, formTab);
 			setCenter(tabPane);
 		});
 	}

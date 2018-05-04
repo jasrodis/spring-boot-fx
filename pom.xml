@@ -25,6 +25,10 @@
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
 		</repository>
+		<repository>
+			<id>bintray.com</id>
+			<url>https://dl.bintray.com/dua3/public</url>
+		</repository>
 	</repositories>
 
 	<build>
@@ -145,6 +149,12 @@
 			<version>9.0.0</version>
 		</dependency>
 
-
+		<dependency>
+			<groupId>de.jensd</groupId>
+			<artifactId>fontawesomefx</artifactId>
+			<version>8.9</version>
+		</dependency>
+		
 	</dependencies>
 </project>
+
