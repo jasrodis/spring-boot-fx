@@ -42,6 +42,7 @@ Following the MVP (Model-View-Presenter) architecture suggested in [Learn JavaFX
 * application.yml Jackson enabled properties file
 * Spring data ready
 * Bootstrap3 theme
+* Font-Awesome ready
 
 <p align="center">
 	<h2>Screenshots</h2>
