@@ -34,6 +34,7 @@ Following the MVP (Model-View-Presenter) architecture suggested in [Learn JavaFX
 
 *  Go to the project location.
 *  Run the maven wrapper!  `./mvnw clean compile exec:java`
+*  If you liked the project put a ⭐
 
 ## Features
 
