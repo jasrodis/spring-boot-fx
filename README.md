@@ -74,6 +74,7 @@ Following the MVP (Model-View-Presenter) architecture suggested in [Learn JavaFX
 * [JavaFX CSS Reference Guide](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html) ([CSS colors](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html#typecolor)  + [HTML color picker](https://html-color-codes.info/old/colorpicker.html))
 * [JavaFX CSS Tutorial](https://docs.oracle.com/javafx/2/css_tutorial/jfxpub-css_tutorial.htm)
 * [Font Awesome cheatsheet](https://fontawesome.com/cheatsheet)
+* [Java tutorial for beginners](https://www.scaler.com/topics/java/)
 
 
 		
