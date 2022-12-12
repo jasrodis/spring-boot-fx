@@ -75,6 +75,7 @@ Following the MVP (Model-View-Presenter) architecture suggested in [Learn JavaFX
 * [JavaFX CSS Tutorial](https://docs.oracle.com/javafx/2/css_tutorial/jfxpub-css_tutorial.htm)
 * [Font Awesome cheatsheet](https://fontawesome.com/cheatsheet)
 * [Java tutorial for beginners](https://www.scaler.com/topics/java/)
+* [Java Cheat Sheet: Freshers & Experienced](https://www.interviewbit.com/java-cheat-sheet/)
 
 
 		
