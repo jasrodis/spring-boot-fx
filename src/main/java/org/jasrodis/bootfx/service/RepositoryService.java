@@ -9,11 +9,10 @@ import org.springframework.stereotype.Service;
 public class RepositoryService {
 
 	private static final Logger log = LoggerFactory.getLogger(RepositoryService.class);
-	private DataEntryRepository dataEntryRepository;
+	private final DataEntryRepository dataEntryRepository;
 
 	public RepositoryService(DataEntryRepository dataEntryRepository) {
-		this.dataEntryRepository = dataEntryRepository ;;
-		System.out.println("blblblblblb");
+		this.dataEntryRepository = dataEntryRepository;
 	}
 
 }
