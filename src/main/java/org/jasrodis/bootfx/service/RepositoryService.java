@@ -12,7 +12,7 @@ public class RepositoryService {
 	private final DataEntryRepository dataEntryRepository;
 
 	public RepositoryService(DataEntryRepository dataEntryRepository) {
-		this.dataEntryRepository = dataEntryRepository ;
+		this.dataEntryRepository = dataEntryRepository;
 	}
 
 }
